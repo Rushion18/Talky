@@ -1,0 +1,5 @@
+CREATE TABLE Followers (
+    FollowerID INT PRIMARY KEY IDENTITY,
+    FollowerUserID INT FOREIGN KEY REFERENCES Users(UserID),
+    FollowedUserID INT FOREIGN KEY REFERENCES Users(UserID)
+);
