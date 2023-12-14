@@ -5,13 +5,17 @@ import { RegisterAuthenticationComponent } from './register-authentication/regis
 import { UserPageComponent } from './user-page/user-page.component';
 import { SavedCollectionsComponent } from './saved-collections/saved-collections.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NavbarContentComponent } from './navbar-content/navbar-content.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterAuthenticationComponent },
   { path: 'login', component: LoginAuthenticationComponent },
-  { path: 'profile', component: UserPageComponent},
-  { path: 'home', component: HomePageComponent}
+  { path: 'profile', component: UserPageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'navbar', component: NavbarContentComponent }
+
 ];
+
 
 
 @NgModule({

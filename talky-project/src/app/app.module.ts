@@ -26,6 +26,10 @@ import { PrivacySettingsComponent } from './privacy-settings/privacy-settings.co
 import { MessagingComponentComponent } from './messaging-component/messaging-component.component';
 import { FollowerComponentComponent } from './friend/follower-component/follower-component.component';
 import { SettingsContentComponent } from './settings-content/settings-content.component';
+import { StoriesComponent } from './stories/stories.component';
+import { PostImageComponent } from './post-detail/post-image/post-image.component';
+import { PostHeaderComponent } from './post-detail/post-header/post-header.component';
+import { PostFooterComponent } from './post-detail/post-footer/post-footer.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { SettingsContentComponent } from './settings-content/settings-content.co
     PrivacySettingsComponent,
     MessagingComponentComponent,
     FollowerComponentComponent,
-    SettingsContentComponent
+    SettingsContentComponent,
+    StoriesComponent,
+    PostImageComponent,
+    PostHeaderComponent,
+    PostFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class PostDetailComponent {
 
+  @Input()
+  username!: string
+
+  @Input()
+  userImageSource!: string
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }
