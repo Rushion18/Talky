@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tooltip, initTE } from 'tw-elements';
 
 @Component({
   selector: 'app-register-authentication',

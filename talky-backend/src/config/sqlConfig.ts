@@ -17,3 +17,8 @@ export const sqlConfig = {
     trustServerCertificate: true 
   }
 }
+
+const testConnection = () => {
+    console.log('DB connected')
+}
+testConnection();
