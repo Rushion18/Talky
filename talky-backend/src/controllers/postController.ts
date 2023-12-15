@@ -166,5 +166,53 @@ export const getCommentsForPost = async (req: Request, res: Response) => {
   }
 };
 
+export const getAllPosts = async (req: Request, res: Response) => {
+  try {
+    const pool = await mssql.connect(sqlConfig);
+
+    const result = await pool.request().execute("getAllPosts");
+
+    return res.status(200).json({
+      posts: result.recordset,
+    });
+  } catch (error) {
+    console.error("Error in getAllPosts:", error);
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
+};
+
+
+export const getPostById = async (req: Request, res: Response) => {
+  try {
+    const { post_id } = req.params;
+
+    const pool = await mssql.connect(sqlConfig);
+
+    const result = await pool
+      .request()
+      .input("post_id", mssql.VarChar, post_id)
+      .execute("getPostById");
+
+    const post = result.recordset[0];
+
+    if (!post) {
+      return res.status(404).json({
+        error: "Post not found",
+      });
+    }
+
+    return res.status(200).json({
+      post,
+    });
+  } catch (error) {
+    console.error("Error in getPostById:", error);
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
+};
+
 
 

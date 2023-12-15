@@ -1,5 +1,6 @@
 
-CREATE TABLE Comments (
+CREATE TABLE Comments
+(
     comment_id VARCHAR(100) NOT NULL PRIMARY KEY,
     user_id VARCHAR(100) NOT NULL,
     post_id VARCHAR(100) NOT NULL,
@@ -10,10 +11,8 @@ CREATE TABLE Comments (
 );
 
 
+
 select * from Comments
 
 
 drop table Comments
-
-
-

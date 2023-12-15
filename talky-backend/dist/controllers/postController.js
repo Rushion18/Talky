@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCommentsForPost = exports.deletePost = exports.likePost = exports.updateComment = exports.addComment = exports.createPost = void 0;
+exports.getPostById = exports.getAllPosts = exports.getCommentsForPost = exports.deletePost = exports.likePost = exports.updateComment = exports.addComment = exports.createPost = void 0;
 const uuid_1 = require("uuid");
 const mssql_1 = __importDefault(require("mssql"));
 const dbConnect_1 = __importDefault(require("../services/dbConnect"));
@@ -155,3 +155,45 @@ const getCommentsForPost = (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.getCommentsForPost = getCommentsForPost;
+const getAllPosts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const pool = yield mssql_1.default.connect(sqlConfig_1.sqlConfig);
+        const result = yield pool.request().execute("getAllPosts");
+        return res.status(200).json({
+            posts: result.recordset,
+        });
+    }
+    catch (error) {
+        console.error("Error in getAllPosts:", error);
+        return res.status(500).json({
+            error: "Internal server error",
+        });
+    }
+});
+exports.getAllPosts = getAllPosts;
+const getPostById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { post_id } = req.params;
+        const pool = yield mssql_1.default.connect(sqlConfig_1.sqlConfig);
+        const result = yield pool
+            .request()
+            .input("post_id", mssql_1.default.VarChar, post_id)
+            .execute("getPostById");
+        const post = result.recordset[0];
+        if (!post) {
+            return res.status(404).json({
+                error: "Post not found",
+            });
+        }
+        return res.status(200).json({
+            post,
+        });
+    }
+    catch (error) {
+        console.error("Error in getPostById:", error);
+        return res.status(500).json({
+            error: "Internal server error",
+        });
+    }
+});
+exports.getPostById = getPostById;
