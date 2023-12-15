@@ -29,16 +29,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
+const userRoute_1 = __importDefault(require("./routes/userRoute"));
+const postRoute_1 = __importDefault(require("./routes/postRoute"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
 app.use((0, express_1.json)());
+app.use((0, cors_1.default)());
+app.use('/user', userRoute_1.default);
+app.use('/post', postRoute_1.default);
+app.use('/comment', postRoute_1.default);
+app.use('/like', postRoute_1.default);
+app.use('/delete', postRoute_1.default);
+app.use('/update', postRoute_1.default);
 app.use((error, req, res, next) => {
     res.json({
         message: error.message
     });
 });
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8500;
 app.listen(port, () => {
-    console.log(`Server listening at port :${port}`);
+    console.log(`server running at port ${port}`);
 });

@@ -10,3 +10,5 @@ CREATE TABLE Likes (
 
 
 SELECT * from Likes
+
+drop table likes

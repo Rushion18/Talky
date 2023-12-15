@@ -3,8 +3,7 @@ CREATE TABLE users (
     username varchar(100) NOT NULL,
     email varchar(250) NOT NULL,
     password varchar(250) NOT NULL,
-     followers VARCHAR(255),
-
+    followers VARCHAR(255)
 )
 
 select * from users

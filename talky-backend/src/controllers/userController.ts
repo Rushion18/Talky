@@ -5,14 +5,12 @@ import { sqlConfig } from "../config/sqlConfig";
 import { v4 } from "uuid";
 import { Request, response, Response } from "express";
 
-// import {
-//   validateLoginUser,
-//   validateRegisterUser,
-// } from "../validators/userValidator";
-// validateLoginUser
+import {
+  validateLoginUser,
+  validateRegisterUser,
+} from "../validators/userValidator";
 
 import Connection from "../services/dbConnect";
-import { validateLoginUser, validateRegisterUser } from "../validators/userValidators";
 
 // import { ExtendedUser } from "../middleware/verifyToken";
 
@@ -175,3 +173,10 @@ export const getFollowers = async (req: Request, res: Response) => {
     });
   }
 };
+
+
+
+
+
+
+

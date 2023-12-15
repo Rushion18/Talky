@@ -55,6 +55,33 @@ export const addComment = async (req: Request, res: Response) => {
   }
 };
 
+
+export const updateComment = async (req: Request, res: Response) => {
+  try {
+    const { comment_id, comment_text } = req.body;
+
+    const pool = await mssql.connect(sqlConfig);
+
+    await pool
+      .request()
+      .input("comment_id", mssql.VarChar, comment_id)
+      .input("comment_text", mssql.VarChar, comment_text)
+      .execute("updateComment");
+
+    return res.status(200).json({
+      message: "Comment updated successfully",
+    });
+  } catch (error) {
+    console.error("Error in updateComment:", error);
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
+};
+
+
+
+
 export const likePost = async (req: Request, res: Response) => {
   try {
     const { user_id, post_id } = req.body;
@@ -138,3 +165,6 @@ export const getCommentsForPost = async (req: Request, res: Response) => {
       });
   }
 };
+
+
+
