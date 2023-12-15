@@ -1,12 +1,14 @@
-CREATE TABLE Posts
-(
-    PostID INT PRIMARY KEY IDENTITY,
-    UserID INT,
-    Caption NVARCHAR(MAX),
-    ImageURL NVARCHAR(MAX),
-    PostDate DATETIME DEFAULT GETDATE()
+CREATE TABLE Posts (
+    post_id VARCHAR(100) NOT NULL PRIMARY KEY,
+    post_description VARCHAR(800) NOT NULL,
+    post_image VARCHAR(800) NOT NULL,
+    user_id VARCHAR(100) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(_id)
 );
 
 
-SELECT * FROM Posts;
-DROP TABLE Posts;
+select * from Posts
+
+
+
+DROP TABLE Posts

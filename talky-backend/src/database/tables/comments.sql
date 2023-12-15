@@ -1,8 +1,16 @@
+
 CREATE TABLE Comments (
-    CommentID INT PRIMARY KEY IDENTITY,
-    UserID INT FOREIGN KEY REFERENCES Users(UserID),
-    PostID INT FOREIGN KEY REFERENCES Posts(PostID),
-    ParentCommentID INT FOREIGN KEY REFERENCES Comments(CommentID),  -- For nested comments
-    CommentText NVARCHAR(MAX),
-    CommentDate DATETIME DEFAULT GETDATE()
+    comment_id VARCHAR(100) NOT NULL PRIMARY KEY,
+    user_id VARCHAR(100) NOT NULL,
+    post_id VARCHAR(100) NOT NULL,
+    comment_text VARCHAR(800) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (user_id) REFERENCES users(_id),
+    FOREIGN KEY (post_id) REFERENCES Posts(post_id)
 );
+
+
+select * from Comments
+
+
+drop table Comments

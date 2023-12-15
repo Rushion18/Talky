@@ -1,0 +1,79 @@
+### SIGNUP
+post http://localhost:8000/user/register
+Content-Type: application/json
+
+{
+    "username": "Emmanuel  Kipsang",
+    "email":"emmanuel@gmail.com",
+    "password": "@Emmanuel123"
+}
+
+### LOGIN
+post http://localhost:8000/user/login
+Content-Type: application/json
+
+{
+    "email":"emmanuel@gmail.com",
+    "password": "@Emmanuel123"
+}
+
+
+### FOLLOW
+post http://localhost:8000/user/follow
+Content-Type: application/json
+
+{
+  "user_id": "97d9c50f-e473-4211-a4e4-e51c0504a4a3",
+  "follower_user_id": "d91bb328-8e6c-47e5-bd44-922932270d99"
+}
+
+
+### GET FOLLOWERS
+get http://localhost:8000/user/9e7424cd-0c46-4a9a-b33e-b6a63cc656d3/followers
+Content-Type: application/json
+
+
+### All Users
+GET http://localhost:8000/user/all
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNGNlMWFmZS1mOWFmLTQ5N2MtYjA4Ni00YmNjNDJhYTAxNTgiLCJlbWFpbCI6ImVtbWFudWVsQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiRW1tYW51ZWwgS2lwc2FuZyIsImlhdCI6MTcwMjQ5ODA2MywiZXhwIjoxNzAyNjcwODYzfQ.Qlg7aWptOKA2DcBj3ImL-p0yb1RmKDKOw_MWfjtFapo 
+
+
+
+
+### CREATE POST
+post http://localhost:8000/post/create
+Content-Type: application/json
+
+{
+  "post_description": "Merry Christmas!!",
+  "post_image": "https://www.ccarprice.com/products/S-Class-S-560-4MATIC-Sedan-2020.jpg",
+  "user_id": "d91bb328-8e6c-47e5-bd44-922932270d99"
+}
+
+
+
+### COMMENT
+post http://localhost:8000/comment/add
+Content-Type: application/json
+
+{
+  "user_id": "97d9c50f-e473-4211-a4e4-e51c0504a4a3",
+  "post_id": "d78cb9e4-277d-4554-ac81-e10917569045",
+  "comment_text": "Wow!"
+}
+
+
+### LIKE POST
+post http://localhost:8000/like/like
+Content-Type: application/json
+
+{
+  "user_id": "97d9c50f-e473-4211-a4e4-e51c0504a4a3",
+  "post_id": "d78cb9e4-277d-4554-ac81-e10917569045"
+
+}
+
+### DELETE POST
+delete http://localhost:8000/post/1449196e-034f-49e0-ba8c-0509f4781d8b
+Content-Type: application/json

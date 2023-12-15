@@ -1,6 +1,12 @@
 CREATE TABLE Likes (
-    LikeID INT PRIMARY KEY IDENTITY,
-    UserID INT FOREIGN KEY REFERENCES Users(UserID),
-    PostID INT FOREIGN KEY REFERENCES Posts(PostID),
-    CommentID INT FOREIGN KEY REFERENCES Comments(CommentID)
+  like_id VARCHAR(100) PRIMARY KEY,
+  user_id VARCHAR(100),
+  post_id VARCHAR(100),
+  created_at DATETIME DEFAULT GETDATE(),
+  
+  FOREIGN KEY (user_id) REFERENCES users(_id), 
+  FOREIGN KEY (post_id) REFERENCES Posts(post_id) 
 );
+
+
+SELECT * from Likes
