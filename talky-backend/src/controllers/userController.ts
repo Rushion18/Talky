@@ -176,7 +176,29 @@ export const getFollowers = async (req: Request, res: Response) => {
 
 
 
+export const getOneUser = async (req: Request, res: Response) => {
 
 
+  const { user_id } = req.params;
 
+  try {
+
+    
+    const pool = await mssql.connect(sqlConfig);
+
+    const user = (
+      await pool
+        .request()
+        .input("user_id", mssql.VarChar, user_id)
+        .execute("getOneUser")
+    ).recordset;
+
+    // console.log("user is ",user);
+    res.status(200).json(user);
+    
+
+  } catch (error) {
+    
+  }
+}
 

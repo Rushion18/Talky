@@ -8,4 +8,5 @@ user_router.post('/login', userController_1.loginUser);
 user_router.get('/all', userController_1.getAllUsers);
 user_router.post('/follow', userController_1.addFollower);
 user_router.get('/:user_id/followers', userController_1.getFollowers);
+user_router.get('/:user_id', userController_1.getOneUser);
 exports.default = user_router;

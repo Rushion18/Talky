@@ -23,7 +23,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFollowers = exports.addFollower = exports.getAllUsers = exports.loginUser = exports.registerUser = void 0;
+exports.getOneUser = exports.getFollowers = exports.addFollower = exports.getAllUsers = exports.loginUser = exports.registerUser = void 0;
 const mssql_1 = __importDefault(require("mssql"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -166,3 +166,18 @@ const getFollowers = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.getFollowers = getFollowers;
+const getOneUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { user_id } = req.params;
+    try {
+        const pool = yield mssql_1.default.connect(sqlConfig_1.sqlConfig);
+        const user = (yield pool
+            .request()
+            .input("user_id", mssql_1.default.VarChar, user_id)
+            .execute("getOneUser")).recordset;
+        // console.log("user is ",user);
+        res.status(200).json(user);
+    }
+    catch (error) {
+    }
+});
+exports.getOneUser = getOneUser;

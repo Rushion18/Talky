@@ -93,13 +93,19 @@ GET http://localhost:8000/post/e9ad437d-857b-4b1b-991d-3e7bb289eb90
 Content-Type: application/json
 
 
-# ### GET FOLLOWERS BUANA
-# GET http://localhost:8000/user/followers
-# Content-Type: application/json
-# token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4OWEyNDhkMy0zZjFmLTRhNDgtYTcwYS0zMjkwYjM1MDU2MmYiLCJlbWFpbCI6ImFzYW1hbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IlBlcmV6IEFubmFuIiwiaWF0IjoxNzAyNjM0MzA0LCJleHAiOjE3MDI4MDcxMDR9.6_ciRhcN53vq6DmlwR4G_YvNXW7LKqVeIdkyGpBA3pE"
+### GET FOLLOWERS BUANA
+GET http://localhost:8000/user/89a248d3-3f1f-4a48-a70a-3290b350562f/followers
+Content-Type: application/json
+token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4OWEyNDhkMy0zZjFmLTRhNDgtYTcwYS0zMjkwYjM1MDU2MmYiLCJlbWFpbCI6ImFzYW1hbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IlBlcmV6IEFubmFuIiwiaWF0IjoxNzAyNjM0MzA0LCJleHAiOjE3MDI4MDcxMDR9.6_ciRhcN53vq6DmlwR4G_YvNXW7LKqVeIdkyGpBA3pE"
 
 
 # ### GET All THEM COMMENTS ALL BUANA
-# GET http://localhost:8000/com/all
-# Content-Type: application/json
-# token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNGNlMWFmZS1mOWFmLTQ5N2MtYjA4Ni00YmNjNDJhYTAxNTgiLCJlbWFpbCI6ImVtbWFudWVsQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiRW1tYW51ZWwgS2lwc2FuZyIsImlhdCI6MTcwMjQ5ODA2MywiZXhwIjoxNzAyNjcwODYzfQ.Qlg7aWptOKA2DcBj3ImL-p0yb1RmKDKOw_MWfjtFapo 
+###
+GET http://localhost:8000/post/comment/a6e3c6ca-4d78-4ed0-99a6-232f4841bf43
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNGNlMWFmZS1mOWFmLTQ5N2MtYjA4Ni00YmNjNDJhYTAxNTgiLCJlbWFpbCI6ImVtbWFudWVsQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiRW1tYW51ZWwgS2lwc2FuZyIsImlhdCI6MTcwMjQ5ODA2MywiZXhwIjoxNzAyNjcwODYzfQ.Qlg7aWptOKA2DcBj3ImL-p0yb1RmKDKOw_MWfjtFapo 
+
+
+### GET ONE USER
+GET http://localhost:8000/user/b052039b-757a-44ee-8139-4e07d795285f
+Content-Type: application/json
