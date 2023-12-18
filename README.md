@@ -1,6 +1,6 @@
 # Talky Social Media Web App
 
-Talky is a social media web app that combines the best features of Pinterest and Instagram, providing users with a platform to connect, share, and discover content.
+Talky is a social media web app designed for social interactions, post sharing, and content discovery. It incorporates features from popular platforms like Instagram and allows users to connect and engage in a visually appealing environment.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ Talky is a social media web app that combines the best features of Pinterest and
 
 ## Introduction
 
-Interlink is a social media web app designed to facilitate user interactions through posts, comments, and likes. It incorporates elements of both Pinterest and Instagram, providing a visually engaging and user-friendly experience.
+Buana is a social media web app designed to provide users with a platform for sharing posts, interacting through likes and comments, and connecting with other users. It aims to create an engaging and user-friendly experience inspired by popular social media platforms.
 
 ## Features
 
@@ -39,14 +39,14 @@ Interlink is a social media web app designed to facilitate user interactions thr
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/interlink.git
-   cd interlink
+   git clone https://github.com/your-username/buana.git
+   cd buana
    ```
 
 2. **Set Up Database:**
    - Install and open Azure Data Studio.
    - Connect to your MSSQL server.
-   - Create a new database for Interlink.
+   - Create a new database for Buana.
 
 3. **Configure Backend:**
    - Initialize your Node.js project.
@@ -74,15 +74,15 @@ Interlink is a social media web app designed to facilitate user interactions thr
 
 ## Database Schema
 
-Review the [Database Schema](#database-schema) section for information on the database tables used in Interlink.
+The database schema for Buana includes tables for users, posts, followers, and comments. Refer to the [Database Schema](#database-schema) section for details.
 
 ## Node.js Backend
 
-Explore the [Node.js Backend](#nodejs-backend) section for details on setting up the backend server.
+Explore the [Node.js Backend](#nodejs-backend) section for information on setting up and configuring the backend server.
 
 ## API Endpoints
 
-Refer to the [API Endpoints](#api-endpoints) section for information on available API routes.
+Refer to the [API Endpoints](#api-endpoints) section for details on available API routes.
 
 ## Testing with Postman
 
@@ -90,7 +90,7 @@ Use the [Testing with Postman](#testing-with-postman) section to test your API e
 
 ## Contributing
 
-We welcome contributions! If you have ideas for improvements, feature requests, or found a bug, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you have ideas, feature requests, or found a bug, feel free to open an issue or submit a pull request.
 
 ## License
 
