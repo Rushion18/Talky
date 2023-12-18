@@ -3,9 +3,9 @@ post http://localhost:8000/user/register
 Content-Type: application/json
 
 {
-    "username": "Mercy Wambui",
-    "email":"Wambui@gmail.com",
-    "password": "@Appleuser564"
+    "username": "Bigboy Kitheka",
+    "email":"gamemy177@gmail.com",
+    "password": "@KithekaD564"
 }
 
 ### LOGIN BUANA
@@ -13,8 +13,8 @@ post http://localhost:8000/user/login
 Content-Type: application/json
 
 {
-    "email":"Wambui@gmail.com",
-    "password": "@Appleuser564"
+    "email":"gamemy177@gmail.com",
+    "password": "@KithekaD564"
 }
 
 
@@ -23,8 +23,8 @@ post http://localhost:8000/user/follow
 Content-Type: application/json
 
 {
-  "user_id": "dc67547f-a050-40f4-a533-057f6429d17c",
-  "follower_user_id": "b052039b-757a-44ee-8139-4e07d795285f"
+  "user_id": "638724a4-a792-48a0-9272-47ed3de90fd0",
+  "follower_user_id": "89a248d3-3f1f-4a48-a70a-3290b350562f"
 }
 
 
@@ -39,9 +39,9 @@ post http://localhost:8000/post/create
 Content-Type: application/json
 
 {
-  "post_description": "Style",
+  "post_description": "Kitheka",
   "post_image": "https://www.pinterest.com/pin/1150880879748603683/",
-  "user_id": "dc67547f-a050-40f4-a533-057f6429d17c"
+  "user_id": "63779c09-1503-4124-833a-dd00a221f8ed"
 }
 
 
@@ -50,9 +50,9 @@ post http://localhost:8000/comment/add
 Content-Type: application/json
 
 {
-  "user_id": "89a248d3-3f1f-4a48-a70a-3290b350562f",
-  "post_id": "6424d8a0-faa1-4cbd-b104-4faebad4a4e0",
-  "comment_text": "Looks cool"
+  "user_id": "63779c09-1503-4124-833a-dd00a221f8ed",
+  "post_id": "2f18ee72-c2d1-4d4a-bb5c-f98374970356",
+  "comment_text": "It is yet another Beautiful morning"
 }
 
 
@@ -61,8 +61,8 @@ PUT http://localhost:8000/comment/update/
 Content-Type: application/json
 
 {
-  "comment_id": "35c0b16b-121f-4358-81ce-833f8304afbc",
-  "comment_text": "I really love cats!"
+  "comment_id": "09a81327-f8b8-4843-90d3-39f09e81b284",
+  "comment_text": "Good boy"
 }
 
 
@@ -72,14 +72,14 @@ Content-Type: application/json
 
 {
   "user_id": "cd1d2542-b8d9-4cde-bdd7-f5132019435a",
-  "post_id": "e9ad437d-857b-4b1b-991d-3e7bb289eb90"
+  "post_id": "6424d8a0-faa1-4cbd-b104-4faebad4a4e0"
 
 }
 
 
 
 ### DELETE POST BUANA - HARAM!
-delete http://localhost:8000/post/eef97a2c-8ec2-4102-b469-32b97d3b849d
+delete http://localhost:8000/post/6424d8a0-faa1-4cbd-b104-4faebad4a4e0
 Content-Type: application/json
 
 
@@ -89,12 +89,12 @@ Content-Type: application/json
 
 
 ### GET ONE POST
-GET http://localhost:8000/post/e9ad437d-857b-4b1b-991d-3e7bb289eb90
+GET http://localhost:8000/post/a6e3c6ca-4d78-4ed0-99a6-232f4841bf43
 Content-Type: application/json
 
 
 ### GET FOLLOWERS BUANA
-GET http://localhost:8000/user/89a248d3-3f1f-4a48-a70a-3290b350562f/followers
+GET http://localhost:8000/user/b052039b-757a-44ee-8139-4e07d795285f/followers
 Content-Type: application/json
 token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4OWEyNDhkMy0zZjFmLTRhNDgtYTcwYS0zMjkwYjM1MDU2MmYiLCJlbWFpbCI6ImFzYW1hbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IlBlcmV6IEFubmFuIiwiaWF0IjoxNzAyNjM0MzA0LCJleHAiOjE3MDI4MDcxMDR9.6_ciRhcN53vq6DmlwR4G_YvNXW7LKqVeIdkyGpBA3pE"
 
@@ -107,5 +107,5 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNGNlMWFmZS1mOWFmLTQ5N2Mt
 
 
 ### GET ONE USER
-GET http://localhost:8000/user/b052039b-757a-44ee-8139-4e07d795285f
+GET http://localhost:8000/user/7a6cc782-bb6b-4b68-9819-5b07087fffeb
 Content-Type: application/json
